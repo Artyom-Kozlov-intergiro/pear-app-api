@@ -1,0 +1,14 @@
+version: '3'
+
+services:
+  postgres:
+    image: postgres
+    restart: always
+    environment:
+      POSTGRES_USER: admin
+      POSTGRES_PASSWORD: simple
+      POSTGRES_DB: postgres
+    ports:
+      - "5432:5432"
+    volumes:
+      - './docker/db/data:/var/lib/postgres'
